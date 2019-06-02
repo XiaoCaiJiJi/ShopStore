@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="it.aust.mapper.OrderMapper">
+	<!-- useGeneratedKeys="true" 需要获取主键值 -->
+	<!-- keyColumn="id" 主键的列名 -->
+	<!-- keyProperty="id" 将主键的值存放在对象的哪个属性里面 -->
+	<insert id="saveOrder" useGeneratedKeys="true" keyColumn="id"  keyProperty="id">
+		  insert into ec_order(order_code,create_date,amount,user_id) values(#{orderCode},#{createDate},#{amount},#{userId})
+	</insert>
+    
+    
+    <select id="getAllOrderByUserId" resultMap="OrderMapper"> 
+    	select * from ec_order where user_id =#{userId}
+    </select>
+    
+    <!-- type：返回的数据类型 (根据id找到对应方法的返回类型) -->
+    
+    <resultMap type="Order" id="OrderMapper">
+    	<!-- 对应的数据库字段 -->
+    	<result column="order_code" property="orderCode"></result>
+    	<result column="create_date" property="createDate"></result>
+    	<result column="send_date" property="sendDate"></result>
+    	<result column="id" property="id"/>
+    	<result column="user_id" property="userId"/>
+    	<!-- property对应order对象的 items属性-->
+    	<collection property="items" column="id" select="it.aust.mapper.OrderItemMapper.getItemsByOrderId" ></collection>
+    </resultMap>
+    
+   
+ 
+    
+</mapper>

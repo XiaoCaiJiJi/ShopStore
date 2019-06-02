@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+  <!-- 标签版本号 -->
+  <tlib-version>1.0</tlib-version>
+  <!-- jsp版本 -->
+  <jsp-version>1.2</jsp-version>
+  <!-- 标签简称 -->
+  <short-name>simple</short-name>
+  <!-- jsp页面可以通过该uri地址找到标签处理类 -->
+  <uri>/pager-1609</uri>
+  <description>
+                           购物商城分页标签
+  </description>
+
+  <tag>
+  <!-- 标签名字 -->
+    <name>page</name>
+    <!-- 标签处理类 -->
+    <tag-class>it.aust.utils.webTag.PageTag</tag-class>
+    <!-- 定义标签的属性 -->
+   <attribute>
+       <!-- 属性名字 -->
+       <name>submitUrl</name>
+       <!-- 是否必须有该属性 -->
+       <required>true</required>
+       <!-- 是否支持EL表达式 -->
+       <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    
+   <attribute>
+       <!-- 属性名字 -->
+       <name>pageModel</name>
+       <!-- 是否必须有该属性 -->
+       <required>true</required>
+       <!-- 是否支持EL表达式 -->
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  </taglib>

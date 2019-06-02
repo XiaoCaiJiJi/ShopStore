@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!-- 加载属性文件 -->
+	<properties resource="db.properties"></properties>
+	
+	<!-- 指定实体bean的位置 -->
+	<typeAliases>
+		<package name="it.aust.bean"/>
+	</typeAliases>
+	
+	<environments default="ecshop">
+		<!-- 配置MyBatis环境 -->
+		<environment id="ecshop">
+			<!-- 配置事务 -->
+			<transactionManager type="JDBC"/>
+			<!-- 配置数据源 -->
+			<dataSource type="POOLED">
+				<!-- 数据库驱动 -->
+				<property name="driver" value="${driver}"/>
+				<!-- URL -->
+				<property name="url" value="${url}"/>
+				<!-- 用户名 -->
+				<property name="username" value="${username}"/>
+				<!-- 密码 -->
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- 配置mapper: 操作数据库表的接口 -->
+	 <mappers>
+<!-- 		扫描该包下所有的类，作为mybatis访问数据库表的接口(接口类名要与mapper的sql语句映射文件名一致)
+ -->		<package name="it.aust.mapper"/>
+     
+	</mappers>
+</configuration>

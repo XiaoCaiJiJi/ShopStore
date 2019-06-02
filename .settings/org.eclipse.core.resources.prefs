@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//WebRoot/js/header.js=UTF-8
+encoding//src/it/aust/bean=UTF-8
+encoding//src/it/aust/mapper=UTF-8
+encoding//src/it/aust/servlet/ArticleManagerServlet.java=UTF-8
+encoding//src/it/aust/servlet/IndexServlet.java=UTF-8
+encoding//src/it/aust/servlet/LogoutServlet.java=UTF-8
+encoding//src/it/aust/servlet/OrderManagerServlet.java=UTF-8
+encoding//src/it/aust/servlet/ShowShopCarServlet.java=UTF-8
+encoding//src/it/aust/servlet/UserManagerServlet.java=UTF-8
+encoding//src/it/aust/servlet/UserServlet.java=UTF-8
+encoding//src/it/aust/utils/ShopContant.java=UTF-8
